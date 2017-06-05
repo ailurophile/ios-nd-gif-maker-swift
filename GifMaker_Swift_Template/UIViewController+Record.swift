@@ -10,7 +10,8 @@ import Foundation
 import UIKit
 import MobileCoreServices
 
-extension UIViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate{
+
+extension UIViewController{
     @IBAction func launchVideoCamera(sender: AnyObject){
         present(pickerControllerWithSource(UIImagePickerControllerSourceType.camera), animated: true, completion: nil)
         
@@ -24,6 +25,10 @@ extension UIViewController: UIImagePickerControllerDelegate, UINavigationControl
         return picker
         
     }
+}
+//MARK: UIImagePickerControllerDelegate
+
+extension UIViewController: UIImagePickerControllerDelegate{
     public func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         dismiss(animated: true, completion: nil)
     }
@@ -32,10 +37,16 @@ extension UIViewController: UIImagePickerControllerDelegate, UINavigationControl
         
         if mediaType == kUTTypeMovie as String{
             let videoURL = info[UIImagePickerControllerMediaURL] as! NSURL
-            print(videoURL.path)
+//            print(videoURL.path)
             UISaveVideoAtPathToSavedPhotosAlbum(videoURL.path!, nil, nil, nil)
             dismiss(animated: true, completion: nil)
-
+            
         }
     }
+    
+}
+//MARK: UINavigationControllerDelegate
+
+extension UIViewController: UINavigationControllerDelegate {
+    
 }

@@ -415,7 +415,7 @@
                                                 </variation>
                                                 <variation key="heightClass=regular-widthClass=compact">
                                                     <mask key="constraints">
-                                                        <include reference="JbZ-cP-AcI"/>
+                                                        <exclude reference="JbZ-cP-AcI"/>
                                                         <include reference="vW8-il-wlU"/>
                                                     </mask>
                                                 </variation>
@@ -473,6 +473,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="GOk-gI-dlu"/>
                     <connections>
+                        <outlet property="gifImageView" destination="Wun-5B-Ruk" id="8KF-Ex-pWV"/>
                         <segue destination="gN0-HT-VRx" kind="show" identifier="showGifEditor" id="wkV-9i-gKS"/>
                     </connections>
                 </viewController>
