@@ -14,6 +14,7 @@
 		D78665511EE5EF4B00FBA7ED /* PreviewViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78665501EE5EF4B00FBA7ED /* PreviewViewController.swift */; };
 		D78665531EE5F4EC00FBA7ED /* UIViewController+Record.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78665521EE5F4EC00FBA7ED /* UIViewController+Record.swift */; };
 		D78665551EE61A4600FBA7ED /* UIImage+Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78665541EE61A4600FBA7ED /* UIImage+Gif.swift */; };
+		D78665571EE743FA00FBA7ED /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78665561EE743FA00FBA7ED /* Gif.swift */; };
 		EDDFC4DC1CE261A600A586CA /* tinaFeyHiFive.gif in Resources */ = {isa = PBXBuildFile; fileRef = EDDFC4DB1CE261A600A586CA /* tinaFeyHiFive.gif */; };
 		EDDFC4DE1CE261C400A586CA /* hotlineBling.gif in Resources */ = {isa = PBXBuildFile; fileRef = EDDFC4DD1CE261C400A586CA /* hotlineBling.gif */; };
 		EDFAA8ED1CDA99A500D2CB08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFAA8EC1CDA99A500D2CB08 /* AppDelegate.swift */; };
@@ -31,6 +32,7 @@
 		D78665501EE5EF4B00FBA7ED /* PreviewViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PreviewViewController.swift; sourceTree = "<group>"; };
 		D78665521EE5F4EC00FBA7ED /* UIViewController+Record.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIViewController+Record.swift"; sourceTree = "<group>"; };
 		D78665541EE61A4600FBA7ED /* UIImage+Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Gif.swift"; sourceTree = "<group>"; };
+		D78665561EE743FA00FBA7ED /* Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		EDDFC4DB1CE261A600A586CA /* tinaFeyHiFive.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tinaFeyHiFive.gif; sourceTree = "<group>"; };
 		EDDFC4DD1CE261C400A586CA /* hotlineBling.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hotlineBling.gif; sourceTree = "<group>"; };
 		EDFAA8E91CDA99A500D2CB08 /* GifMaker_Swift_Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GifMaker_Swift_Template.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -73,6 +75,25 @@
 			name = Assets;
 			sourceTree = "<group>";
 		};
+		D78665581EE7448900FBA7ED /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				D78665521EE5F4EC00FBA7ED /* UIViewController+Record.swift */,
+				D78665541EE61A4600FBA7ED /* UIImage+Gif.swift */,
+			);
+			name = Extensions;
+			sourceTree = "<group>";
+		};
+		D78665591EE7449D00FBA7ED /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				D786654C1EE5EEFD00FBA7ED /* WelcomeViewController.swift */,
+				D786654E1EE5EF3200FBA7ED /* GifEditorViewController.swift */,
+				D78665501EE5EF4B00FBA7ED /* PreviewViewController.swift */,
+			);
+			name = Control;
+			sourceTree = "<group>";
+		};
 		EDFAA8E01CDA99A500D2CB08 = {
 			isa = PBXGroup;
 			children = (
@@ -96,11 +117,9 @@
 				A94CC3D71D21C85A00DC758E /* Assets */,
 				A94CC3D61D21C84C00DC758E /* Supporting Files */,
 				EDFAA9221CDA9C4700D2CB08 /* Regift Files */,
-				D786654C1EE5EEFD00FBA7ED /* WelcomeViewController.swift */,
-				D786654E1EE5EF3200FBA7ED /* GifEditorViewController.swift */,
-				D78665501EE5EF4B00FBA7ED /* PreviewViewController.swift */,
-				D78665521EE5F4EC00FBA7ED /* UIViewController+Record.swift */,
-				D78665541EE61A4600FBA7ED /* UIImage+Gif.swift */,
+				D78665591EE7449D00FBA7ED /* Control */,
+				D78665581EE7448900FBA7ED /* Extensions */,
+				D78665561EE743FA00FBA7ED /* Gif.swift */,
 			);
 			path = GifMaker_Swift_Template;
 			sourceTree = "<group>";
@@ -195,6 +214,7 @@
 				D786654D1EE5EEFD00FBA7ED /* WelcomeViewController.swift in Sources */,
 				D78665511EE5EF4B00FBA7ED /* PreviewViewController.swift in Sources */,
 				D78665551EE61A4600FBA7ED /* UIImage+Gif.swift in Sources */,
+				D78665571EE743FA00FBA7ED /* Gif.swift in Sources */,
 				D786654F1EE5EF3200FBA7ED /* GifEditorViewController.swift in Sources */,
 				EDFAA9211CDA9C3100D2CB08 /* RegiftCaption.swift in Sources */,
 				EDFAA8ED1CDA99A500D2CB08 /* AppDelegate.swift in Sources */,
