@@ -9,9 +9,13 @@
 import UIKit
 
 class PreviewViewController: UIViewController {
+    @IBOutlet weak var gifPreviewView: UIImageView!
+    
+    var gif: Gif?
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        gifPreviewView.image = gif?.gifImage
 
         // Do any additional setup after loading the view.
     }
@@ -21,8 +25,21 @@ class PreviewViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    @IBAction func shareGif(_ sender: Any) {
+        let animatedGif = NSData(contentsOf: (gif?.url)!)
+        let itemsToShare = [animatedGif]
+        let shareController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
+        shareController.completionWithItemsHandler = {(activityType, completed: Bool, returnedItems, activityError) in
+            if(completed) {
+                self.navigationController?.popToRootViewController(animated: true)
+            }
+            self.present(shareController, animated: true, completion: nil)
+        }
+    }
 
     /*
+     
+
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
