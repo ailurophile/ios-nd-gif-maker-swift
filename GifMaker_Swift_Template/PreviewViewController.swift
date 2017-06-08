@@ -31,10 +31,10 @@ class PreviewViewController: UIViewController {
         let shareController = UIActivityViewController(activityItems: itemsToShare, applicationActivities: nil)
         shareController.completionWithItemsHandler = {(activityType, completed: Bool, returnedItems, activityError) in
             if(completed) {
-                self.navigationController?.popToRootViewController(animated: true)
+                _ = self.navigationController?.popToRootViewController(animated: true)
             }
-            self.present(shareController, animated: true, completion: nil)
         }
+        self.present(shareController, animated: true, completion: nil)
     }
 
     /*
