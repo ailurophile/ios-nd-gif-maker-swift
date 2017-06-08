@@ -21,7 +21,7 @@
                         <color key="tintColor" red="1" green="0.20000000000000001" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="aXC-Xw-CZL" kind="relationship" relationship="rootViewController" id="O6U-Pr-xGP"/>
+                        <segue destination="upq-jB-3dI" kind="relationship" relationship="rootViewController" id="1G5-Zl-92n"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DM2-vZ-vXy" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -50,7 +50,7 @@
                                     <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifCell" id="2ru-Ed-G6h" customClass="GifCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifCollectionCell" id="2ru-Ed-G6h" customClass="GifCell">
                                         <rect key="frame" x="99" y="8" width="177" height="177"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -62,6 +62,7 @@
                                                 </imageView>
                                             </subviews>
                                         </view>
+                                        <color key="backgroundColor" red="0.16094575589999999" green="1" blue="0.17266219669999999" alpha="1" colorSpace="calibratedRGB"/>
                                         <constraints>
                                             <constraint firstItem="sHD-OW-keS" firstAttribute="centerY" secondItem="2ru-Ed-G6h" secondAttribute="centerY" id="3tT-Xx-fXS"/>
                                             <constraint firstItem="sHD-OW-keS" firstAttribute="top" secondItem="2ru-Ed-G6h" secondAttribute="topMargin" constant="-8" id="Vlj-Xn-EIa"/>
@@ -84,7 +85,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <outlet property="gifImageView" destination="sHD-OW-keS" id="VAe-LJ-h3J"/>
+                                            <outlet property="gifImageView" destination="sHD-OW-keS" id="2hO-eC-NNG"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -163,7 +164,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1mO-R1-5Re" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="81" y="66"/>
+            <point key="canvasLocation" x="-1047" y="-23"/>
         </scene>
         <!--Add a Caption-->
         <scene sceneID="7IM-YL-IPR">
@@ -342,6 +343,43 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BEl-4x-y0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1215" y="66"/>
+        </scene>
+        <!--Saved Gifs View Controller-->
+        <scene sceneID="6DL-gZ-4Ts">
+            <objects>
+                <viewController id="YWi-uh-gXo" customClass="SavedGifsViewController" customModule="GifMaker_Swift_Template" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="bBQ-cP-654"/>
+                        <viewControllerLayoutGuide type="bottom" id="pIY-I8-9lh"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="IhT-9b-cO1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="415-W0-Ksl">
+                                <rect key="frame" x="157" y="587" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="2xW-FT-Gh1"/>
+                                    <constraint firstAttribute="height" constant="60" id="ZYW-1H-MxH"/>
+                                </constraints>
+                                <state key="normal" title="Button" image="createButton"/>
+                                <connections>
+                                    <action selector="presentVideoOptions" destination="YWi-uh-gXo" eventType="touchUpInside" id="3jz-RL-IEN"/>
+                                    <action selector="presentVideoOptions" destination="aXC-Xw-CZL" eventType="touchUpInside" id="iIe-fc-HJR"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="pIY-I8-9lh" firstAttribute="top" secondItem="415-W0-Ksl" secondAttribute="bottom" constant="20" id="4Em-k5-Y74"/>
+                            <constraint firstItem="415-W0-Ksl" firstAttribute="centerX" secondItem="IhT-9b-cO1" secondAttribute="centerX" id="tBV-Wm-cie"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="qa3-MD-gRy"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="77B-Tb-e8B" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1066" y="-1556"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="MO7-ys-2QJ">
