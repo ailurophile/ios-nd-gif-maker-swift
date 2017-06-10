@@ -67,14 +67,7 @@ class GifEditorViewController: UIViewController, UITextFieldDelegate {
     //MARK: gif editor methods
     @IBAction func presentPreview(_ sender: Any) {
        let gifPreviewVC = storyboard?.instantiateViewController(withIdentifier: "PreviewViewController") as! PreviewViewController
- /*       let numberOfViewControllers = navigationController?.viewControllers.count ?? 0
-        if numberOfViewControllers > 1, let savedGifsVC = navigationController?.viewControllers[numberOfViewControllers - 2] {
-            if let savedGifsVC = savedGifsVC as? SavedGifsViewController{
-                gifPreviewVC.delegate = savedGifsVC
-
-            }
-        }
- */
+// Set SavedGifsViewController as PreviewViewControllerDelegate
         gifPreviewVC.delegate = navigationController?.viewControllers[0] as! SavedGifsViewController?
         gif?.caption = captionTextField.text
 //        let url = Regift.init(sourceFileURL: (gif?.videoURL)!, frameCount: frameCount, delayTime: delayTime)
@@ -85,28 +78,6 @@ class GifEditorViewController: UIViewController, UITextFieldDelegate {
         gifPreviewVC.gif = newGif
         navigationController?.pushViewController(gifPreviewVC, animated: true)
     }
-    /*
-     - (IBAction)presentPreview:(id)sender {
-     GifPreviewViewController *previewVC = [self.storyboard instantiateViewControllerWithIdentifier:@"GifPreviewViewController"];
-     self.gif.caption = self.captionTextField.text;
-     
-     Regift *regift = [[Regift alloc] initWithSourceFileURL:self.gif.videoURL destinationFileURL:nil frameCount:kFrameCount delayTime:kDelayTime loopCount:kLoopCount];
-     
-     UIFont *captionFont = self.captionTextField.font;
-     NSURL *gifURL = [regift createGifWithCaption:self.captionTextField.text font:captionFont];
-     
-     Gif *newGif = [[Gif alloc] initWithGifURL:gifURL videoURL:self.gif.videoURL caption:self.captionTextField.text];
-     previewVC.gif = newGif;
-     
-     [self.navigationController pushViewController:previewVC animated:YES];
-     }
-    // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

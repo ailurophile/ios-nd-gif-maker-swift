@@ -41,15 +41,14 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
         //load Gifs from archive
         if  gifsFilePath != ""{
             savedGifs = NSKeyedUnarchiver.unarchiveObject(withFile: gifsFilePath) as? [Gif]
-//            let gifArray = [NSKeyedUnarchiver.unarchiveObject(withFile: gifsFilePath)]
-//            print("gifArray: \(gifArray)")
-//            savedGifs = gifArray as! [Gif]
-//            savedGifs = [NSKeyedUnarchiver.unarchiveObject(withFile: gifsFilePath) as! Gif]
+
         }
         super.viewWillAppear(animated)
-        if (savedGifs?.count)! > 0 && savedGifs?[0] != nil{
-//        if (savedGifs?.count)!  > 0 {
-            emptyView.isHidden = true
+        if savedGifs != nil{
+            if (savedGifs?.count)! > 0 && savedGifs?[0] != nil{
+//       if (savedGifs?.count)!  > 0 {
+                emptyView.isHidden = true
+            }
         }
         collectionView.reloadData()
 
@@ -60,11 +59,7 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
     override func viewWillTransition(to size: CGSize, with coordinator: UIViewControllerTransitionCoordinator) {
 //        configureFlowLayout(size)
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
+
 //MARK: UICollectionView Delegate & Data Source
     
     
@@ -78,6 +73,11 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
             cell.configureForGif(gif: gif!)
         }
         return cell
+    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
+        detailVC.gif = savedGifs?[indexPath.row]
+        present(detailVC, animated: true, completion: nil)
     }
 //MARK:  Collection View Flow Layout Methods
 
@@ -113,14 +113,15 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
         NSKeyedArchiver.archiveRootObject(savedGifs!, toFile: gifsFilePath)
     }
 
-    /*
+    
     // MARK: - Navigation
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
+    func showWelcome(){
+        if !UserDefaults.standard.bool(forKey: "previouslyLaunched"){
+            UserDefaults.standard.set(true, forKey: "previouslyLaunched")
+            let welcomeVC = storyboard?.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
+            navigationController?.pushViewController(welcomeVC, animated: true)
+        }
+    }
 }

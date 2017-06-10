@@ -17,6 +17,7 @@
 		D78665571EE743FA00FBA7ED /* Gif.swift in Sources */ = {isa = PBXBuildFile; fileRef = D78665561EE743FA00FBA7ED /* Gif.swift */; };
 		D7B920341EEA091800395138 /* SavedGifsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B920331EEA091800395138 /* SavedGifsViewController.swift */; };
 		D7B920361EEA106C00395138 /* GifCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7B920351EEA106C00395138 /* GifCell.swift */; };
+		D7D81D961EEC526E00524598 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7D81D951EEC526E00524598 /* DetailViewController.swift */; };
 		EDDFC4DC1CE261A600A586CA /* tinaFeyHiFive.gif in Resources */ = {isa = PBXBuildFile; fileRef = EDDFC4DB1CE261A600A586CA /* tinaFeyHiFive.gif */; };
 		EDDFC4DE1CE261C400A586CA /* hotlineBling.gif in Resources */ = {isa = PBXBuildFile; fileRef = EDDFC4DD1CE261C400A586CA /* hotlineBling.gif */; };
 		EDFAA8ED1CDA99A500D2CB08 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDFAA8EC1CDA99A500D2CB08 /* AppDelegate.swift */; };
@@ -37,6 +38,7 @@
 		D78665561EE743FA00FBA7ED /* Gif.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gif.swift; sourceTree = "<group>"; };
 		D7B920331EEA091800395138 /* SavedGifsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SavedGifsViewController.swift; sourceTree = "<group>"; };
 		D7B920351EEA106C00395138 /* GifCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GifCell.swift; sourceTree = "<group>"; };
+		D7D81D951EEC526E00524598 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		EDDFC4DB1CE261A600A586CA /* tinaFeyHiFive.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = tinaFeyHiFive.gif; sourceTree = "<group>"; };
 		EDDFC4DD1CE261C400A586CA /* hotlineBling.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = hotlineBling.gif; sourceTree = "<group>"; };
 		EDFAA8E91CDA99A500D2CB08 /* GifMaker_Swift_Template.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GifMaker_Swift_Template.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -95,6 +97,7 @@
 				D786654E1EE5EF3200FBA7ED /* GifEditorViewController.swift */,
 				D78665501EE5EF4B00FBA7ED /* PreviewViewController.swift */,
 				D7B920331EEA091800395138 /* SavedGifsViewController.swift */,
+				D7D81D951EEC526E00524598 /* DetailViewController.swift */,
 			);
 			name = Control;
 			sourceTree = "<group>";
@@ -216,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7D81D961EEC526E00524598 /* DetailViewController.swift in Sources */,
 				EDFAA9201CDA9C3100D2CB08 /* Regift.swift in Sources */,
 				D7B920341EEA091800395138 /* SavedGifsViewController.swift in Sources */,
 				D7B920361EEA106C00395138 /* GifCell.swift in Sources */,
