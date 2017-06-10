@@ -8,10 +8,14 @@
 
 import UIKit
 
+protocol PreviewViewControllerDelegate {
+    func previewVC(_ preview:PreviewViewController, didSaveGif gif:Gif)
+}
 class PreviewViewController: UIViewController {
     @IBOutlet weak var gifPreviewView: UIImageView!
     
     var gif: Gif?
+    var delegate:SavedGifsViewController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,6 +39,10 @@ class PreviewViewController: UIViewController {
             }
         }
         self.present(shareController, animated: true, completion: nil)
+    }
+    @IBAction func createAndSave(){
+        delegate?.previewVC(self, didSaveGif: gif!)
+        _ = navigationController?.popToRootViewController(animated: true)
     }
 
     /*

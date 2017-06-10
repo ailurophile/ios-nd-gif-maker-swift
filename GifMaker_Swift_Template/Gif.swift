@@ -9,11 +9,11 @@
 import UIKit
 
 
-class Gif: NSObject {
+class Gif: NSObject, NSCoding {
     var url: URL?
     var videoURL: URL?
     var caption: String?
-    let gifImage: UIImage
+    var gifImage: UIImage
     var gifData: NSData?
     
     
@@ -27,6 +27,24 @@ class Gif: NSObject {
     init(_ name: String){
         self.gifImage = UIImage.gif(name: name)!
 
+    }
+//MARK: PErsistence methods
+    // archive retrieval
+    required init?(coder aDecoder: NSCoder) {
+        self.url = aDecoder.decodeObject(forKey: "url") as! URL?
+        self.videoURL = aDecoder.decodeObject(forKey: "videoURL") as! URL?
+        self.caption = aDecoder.decodeObject(forKey: "caption") as! String?
+        self.gifImage = aDecoder.decodeObject(forKey: "gifImage") as! UIImage
+        self.gifData = aDecoder.decodeObject(forKey: "gifData") as! NSData?
+        
+    }
+    //archiver
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(self.url, forKey: "url")
+        aCoder.encode(self.videoURL, forKey: "videoURL")
+        aCoder.encode(self.caption , forKey: "caption")
+        aCoder.encode(self.gifData, forKey: "gifData")
+        aCoder.encode(self.gifImage, forKey: "gifImage")
     }
     
 }

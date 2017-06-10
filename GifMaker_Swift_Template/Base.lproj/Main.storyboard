@@ -50,7 +50,7 @@
                                     <inset key="sectionInset" minX="8" minY="8" maxX="8" maxY="8"/>
                                 </collectionViewFlowLayout>
                                 <cells>
-                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifCollectionCell" id="2ru-Ed-G6h" customClass="GifCell">
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="GifCell" id="2ru-Ed-G6h" customClass="GifCell" customModule="GifMaker_Swift_Template" customModuleProvider="target">
                                         <rect key="frame" x="99" y="8" width="177" height="177"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
@@ -85,7 +85,7 @@
                                             </mask>
                                         </variation>
                                         <connections>
-                                            <outlet property="gifImageView" destination="sHD-OW-keS" id="2hO-eC-NNG"/>
+                                            <outlet property="gifImageView" destination="sHD-OW-keS" id="yr7-Z1-1CY"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -101,6 +101,9 @@
                                     <constraint firstAttribute="height" constant="60" id="nD5-xT-Xdf"/>
                                 </constraints>
                                 <state key="normal" image="createButton"/>
+                                <connections>
+                                    <action selector="presentVideoOptions" destination="upq-jB-3dI" eventType="touchUpInside" id="Z6Q-IN-pcO"/>
+                                </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="rBY-mr-O59">
                                 <rect key="frame" x="16" y="261.5" width="343" height="144"/>
@@ -159,8 +162,18 @@
                             <constraint firstItem="hbv-Kk-KXX" firstAttribute="bottom" secondItem="zVw-uv-suS" secondAttribute="top" id="ztB-2Z-tNd"/>
                             <constraint firstAttribute="trailingMargin" secondItem="rBY-mr-O59" secondAttribute="trailing" id="zxv-rx-Rz8"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="uum-Fj-rDI"/>
+                            </mask>
+                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="My Collection" id="7HF-Yq-Lti"/>
+                    <connections>
+                        <outlet property="collectionView" destination="hbv-Kk-KXX" id="5co-NH-0oh"/>
+                        <outlet property="emptyView" destination="rBY-mr-O59" id="oJu-Yj-0lR"/>
+                        <outlet property="flowLayout" destination="tRH-3Q-oq2" id="JIX-kS-3zI"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1mO-R1-5Re" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -265,6 +278,9 @@
                                         <state key="normal" title="CREATE AND SAVE">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <connections>
+                                            <action selector="createAndSave" destination="cB7-Y1-ZFX" eventType="touchUpInside" id="hyX-rq-SVv"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                             </stackView>
