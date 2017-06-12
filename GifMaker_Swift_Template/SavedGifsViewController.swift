@@ -26,6 +26,7 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
     @IBOutlet weak var collectionView: UICollectionView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        showWelcome()
 
         // Do any additional setup after loading the view.
     }
@@ -79,7 +80,6 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
     }
 
     func configureFlowLayout( _ size: CGSize){
-        print("SIZE = \(size)")
         let space: CGFloat = 3.0
         let width = size.width
         let height = size.height
@@ -87,7 +87,6 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
         if width > height {
             dimension = (width - (5 * space))/6.0
         }
-        print("dimension = \(dimension)")
         flowLayout?.minimumLineSpacing = space
         flowLayout?.minimumInteritemSpacing = space
         flowLayout?.itemSize = CGSize(width: dimension,height: dimension)
@@ -97,7 +96,6 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
         if let url = gif.url{
             gif.gifData = NSData(contentsOf: url)
         }
-        print("inside previewVC!!!!!!!!!!!!!")
         if savedGifs == nil{
             savedGifs = []
         }
@@ -111,10 +109,8 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
     
     func deleteGif(gif: Gif) {
         let index = savedGifs?.index(of: gif)
-        print("*******index of Gif = \(index)")
         if index != nil {
             savedGifs?.remove(at: index!)
-            print("gif count after removal = \(savedGifs?.count)")
             NSKeyedArchiver.archiveRootObject(savedGifs!, toFile: gifsFilePath)
             collectionView.reloadData()
                 

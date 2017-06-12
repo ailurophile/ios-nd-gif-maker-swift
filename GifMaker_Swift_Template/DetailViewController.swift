@@ -40,7 +40,6 @@ class DetailViewController: UIViewController {
 
     @IBAction func deleteButtonPressed(_ sender: Any) {
         delegate?.deleteGif(gif: gif)
-        print("delegate = \(delegate)")
         dismiss(animated: true, completion: nil)
 
     }

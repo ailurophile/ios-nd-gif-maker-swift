@@ -114,7 +114,6 @@ extension UIViewController{
         let documentsDirectory = paths[0]
         let manager = FileManager()
         var outputURL = documentsDirectory + "/output"
-        print("output url: \(outputURL)")
         do {
             try manager.createDirectory(atPath: outputURL, withIntermediateDirectories: true, attributes: nil)
         } catch  {
@@ -122,7 +121,6 @@ extension UIViewController{
             return""
         }
         outputURL += "/output.mov"
-        print("output url: \(outputURL)")
 
         // Remove Existing File
         do {
@@ -209,7 +207,6 @@ extension UIViewController: UIImagePickerControllerDelegate{
         dismiss(animated: true, completion: nil)
     }
     public func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
-        print(info)
         let mediaType = info[UIImagePickerControllerMediaType] as! String
         
         if mediaType == kUTTypeMovie as String{
@@ -225,9 +222,6 @@ extension UIViewController: UIImagePickerControllerDelegate{
             
             cropVideoToSquare(videoURL, start: start, duration: duration)
 //            convertVideoToGif(videoURL: videoURL, start: start, duration: duration )
-//            print(videoURL.path)
-//            UISaveVideoAtPathToSavedPhotosAlbum(videoURL.path!, nil, nil, nil)
-//            dismiss(animated: true, completion: nil)
             
         }
     }
