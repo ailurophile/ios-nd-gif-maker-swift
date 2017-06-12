@@ -298,6 +298,8 @@
                     <navigationItem key="navigationItem" title="Preview" id="SWX-N6-oaS"/>
                     <connections>
                         <outlet property="gifPreviewView" destination="HQu-c2-zTO" id="LYc-YN-ohO"/>
+                        <outlet property="saveButton" destination="xoi-MZ-GNH" id="qpM-VY-qhY"/>
+                        <outlet property="shareButton" destination="lnU-9g-0xe" id="4rm-y6-crO"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KCC-tI-bRp" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -363,6 +365,7 @@
                     </view>
                     <connections>
                         <outlet property="gifImageView" destination="fMj-xi-5Fm" id="MiL-3u-KjK"/>
+                        <outlet property="shareButton" destination="tie-bE-ygI" id="jnZ-eg-Y8t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BEl-4x-y0s" userLabel="First Responder" sceneMemberID="firstResponder"/>

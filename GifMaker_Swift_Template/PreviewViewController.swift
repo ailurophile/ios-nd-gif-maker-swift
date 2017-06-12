@@ -14,14 +14,23 @@ protocol PreviewViewControllerDelegate {
 class PreviewViewController: UIViewController {
     @IBOutlet weak var gifPreviewView: UIImageView!
     
+    @IBOutlet weak var saveButton: UIButton!
+    @IBOutlet weak var shareButton: UIButton!
     var gif: Gif?
     var delegate:SavedGifsViewController? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         gifPreviewView.image = gif?.gifImage
-
         // Do any additional setup after loading the view.
+        // Customize Buttons
+        shareButton.layer.cornerRadius =   4.0
+        shareButton.layer.borderColor = UIColor(red: 1.0, green: 65.0/255.0, blue: 112.0/255.0 , alpha: 1.0).cgColor
+        shareButton.layer.borderWidth = 1.0
+        saveButton.layer.cornerRadius =   4.0
+
+        
+
     }
 
     override func didReceiveMemoryWarning() {
