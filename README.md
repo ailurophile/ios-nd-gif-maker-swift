@@ -16,7 +16,7 @@ GifMaker is an app that lets users create simple GIF animations from their iOS d
 
 * Tap button to bring up video options: Select Record a video to enable the camera, Select Use existing video to go to photo album 
 
-## My Collection Screen
+### My Collection Screen
 
 * Tap button to bring up video options: Select Record a video to enable the camera, Select Use existing video to go to photo album 
 * Tap a gif to see the Detail View
@@ -36,7 +36,7 @@ GifMaker is an app that lets users create simple GIF animations from their iOS d
 * Slide < mark at video strip along top of screen to change starting point of video, slide > to change end point, press play to preview
 * Tap use video to go to the Add Caption Screen
 
-## Add Caption
+### Add Caption
 
 * If desired tap bottom of screen where Add Cation placeholder shows to bring up keyboard.  Enter caption and press return to dismiss keyboard.  Tap caption again to change.
 * When satisfied with caption or if no caption is desired press Next to go to the Preview Screen
