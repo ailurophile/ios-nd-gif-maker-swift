@@ -20,6 +20,8 @@ let loopCount = 0 // 0 means loop forever
 extension UIViewController{
 
     @IBAction func presentVideoOptions(){
+        navigationController?.navigationBar.isHidden = true
+
         if !UIImagePickerController.isSourceTypeAvailable(UIImagePickerControllerSourceType.camera){
             //use photo album
             self.launchPhotoLibrary()

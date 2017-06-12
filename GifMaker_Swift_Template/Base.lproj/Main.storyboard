@@ -218,7 +218,7 @@
                             <constraint firstItem="Idg-S9-dYE" firstAttribute="leading" secondItem="pNa-Y5-au7" secondAttribute="leadingMargin" id="nwW-nq-7aP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Title" id="98w-hN-q9u">
+                    <navigationItem key="navigationItem" id="98w-hN-q9u">
                         <barButtonItem key="rightBarButtonItem" title="Next" id="kvy-5V-EgW">
                             <color key="tintColor" red="1" green="0.25490196079999999" blue="0.43921568630000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <connections>

@@ -10,20 +10,12 @@ import UIKit
 
 class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PreviewViewControllerDelegate {
     var savedGifs: [Gif]?
-//    var savedGifs: NSMutableArray?
     let cellMargin:CGFloat = 12.0
     var gifsFilePath:String {
         var paths = NSSearchPathForDirectoriesInDomains(.documentDirectory, .userDomainMask, true)
         let documentsDirectory = paths[0]
-//        let manager = FileManager()
         let path = documentsDirectory + "/savedGifs"
-/*        print("path url: \(path)")
-        do {
-            try manager.createDirectory(atPath: path, withIntermediateDirectories: true, attributes: nil)
-        } catch  {
-            print("caught error creating directory")
-            return ""
-        }*/
+
         return path
     }
     
@@ -44,12 +36,10 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
 
         }
         super.viewWillAppear(animated)
-        if savedGifs != nil{
-            if (savedGifs?.count)! > 0 && savedGifs?[0] != nil{
-//       if (savedGifs?.count)!  > 0 {
-                emptyView.isHidden = true
-            }
-        }
+
+        navigationController?.navigationBar.isHidden =  savedGifs?.count ?? 0 == 0 ? true : false
+        emptyView.isHidden = !(navigationController?.navigationBar.isHidden)!
+
         collectionView.reloadData()
 
         // set up flow layout
@@ -77,6 +67,7 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailVC.gif = savedGifs?[indexPath.row]
+
         present(detailVC, animated: true, completion: nil)
     }
 //MARK:  Collection View Flow Layout Methods
@@ -110,6 +101,8 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
             savedGifs = []
         }
         savedGifs?.append(gif)
+        navigationController?.navigationBar.isHidden = false
+        
         NSKeyedArchiver.archiveRootObject(savedGifs!, toFile: gifsFilePath)
     }
 
