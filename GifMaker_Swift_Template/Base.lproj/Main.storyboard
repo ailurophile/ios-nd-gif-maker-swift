@@ -349,28 +349,42 @@
                                     <action selector="closeButtonPressed:" destination="Ilf-GF-t1a" eventType="touchUpInside" id="BEr-dy-lrq"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2dt-hq-4kD">
+                                <rect key="frame" x="16" y="539" width="343" height="50"/>
+                                <state key="normal" title="DELETE">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="deleteButtonPressed:" destination="Ilf-GF-t1a" eventType="touchUpInside" id="Cdm-5Y-xoX"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.18039215689999999" green="0.23921568630000001" blue="0.28235294119999998" alpha="0.89705230496453903" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fMj-xi-5Fm" firstAttribute="centerY" secondItem="98u-Ei-l0c" secondAttribute="centerY" id="0xS-P0-Wef"/>
                             <constraint firstItem="fMj-xi-5Fm" firstAttribute="centerX" secondItem="98u-Ei-l0c" secondAttribute="centerX" id="1nT-PV-jGp"/>
+                            <constraint firstItem="tie-bE-ygI" firstAttribute="top" secondItem="2dt-hq-4kD" secondAttribute="bottom" constant="8" id="20t-aG-iiP"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="2dt-hq-4kD" secondAttribute="trailing" id="3FC-BD-rs4"/>
                             <constraint firstItem="qvD-Hf-gP0" firstAttribute="top" secondItem="141-ek-2z6" secondAttribute="bottom" constant="-2" id="6Pv-km-Uga"/>
                             <constraint firstItem="qvD-Hf-gP0" firstAttribute="trailing" secondItem="98u-Ei-l0c" secondAttribute="trailingMargin" constant="11" id="CcA-Ms-Y4k"/>
                             <constraint firstItem="tie-bE-ygI" firstAttribute="leading" secondItem="98u-Ei-l0c" secondAttribute="leadingMargin" id="SSN-yS-Ja1"/>
                             <constraint firstItem="tie-bE-ygI" firstAttribute="trailing" secondItem="98u-Ei-l0c" secondAttribute="trailingMargin" id="YsK-Gn-Xxo"/>
+                            <constraint firstItem="2dt-hq-4kD" firstAttribute="leading" secondItem="98u-Ei-l0c" secondAttribute="leadingMargin" id="pZd-FB-V9a"/>
+                            <constraint firstItem="tie-bE-ygI" firstAttribute="height" secondItem="2dt-hq-4kD" secondAttribute="height" id="tjt-KD-3Ku"/>
                             <constraint firstItem="fMj-xi-5Fm" firstAttribute="trailing" secondItem="98u-Ei-l0c" secondAttribute="trailingMargin" id="wH4-Qz-1Xt"/>
                             <constraint firstItem="fMj-xi-5Fm" firstAttribute="leading" secondItem="98u-Ei-l0c" secondAttribute="leadingMargin" id="wHQ-EP-jcX"/>
                             <constraint firstItem="8DJ-Ka-ETF" firstAttribute="top" secondItem="tie-bE-ygI" secondAttribute="bottom" constant="20" id="zYz-Sa-xDb"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="deleteButton" destination="2dt-hq-4kD" id="WUj-r7-xQQ"/>
                         <outlet property="gifImageView" destination="fMj-xi-5Fm" id="MiL-3u-KjK"/>
                         <outlet property="shareButton" destination="tie-bE-ygI" id="jnZ-eg-Y8t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BEl-4x-y0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1215" y="66"/>
+            <point key="canvasLocation" x="799" y="-6"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="MO7-ys-2QJ">

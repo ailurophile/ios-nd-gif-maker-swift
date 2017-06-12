@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PreviewViewControllerDelegate {
+class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource,UICollectionViewDelegateFlowLayout,PreviewViewControllerDelegate, DetailViewControllerDelegate {
     var savedGifs: [Gif]?
     let cellMargin:CGFloat = 12.0
     var gifsFilePath:String {
@@ -67,6 +67,7 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let detailVC = storyboard?.instantiateViewController(withIdentifier: "DetailViewController") as! DetailViewController
         detailVC.gif = savedGifs?[indexPath.row]
+        detailVC.delegate = self
 
         present(detailVC, animated: true, completion: nil)
     }
@@ -106,7 +107,19 @@ class SavedGifsViewController: UIViewController, UICollectionViewDelegate, UICol
         NSKeyedArchiver.archiveRootObject(savedGifs!, toFile: gifsFilePath)
     }
 
+    //MARK: DetailViewControllerDelegate
     
+    func deleteGif(gif: Gif) {
+        let index = savedGifs?.index(of: gif)
+        print("*******index of Gif = \(index)")
+        if index != nil {
+            savedGifs?.remove(at: index!)
+            print("gif count after removal = \(savedGifs?.count)")
+            NSKeyedArchiver.archiveRootObject(savedGifs!, toFile: gifsFilePath)
+            collectionView.reloadData()
+                
+        }        
+    }
     // MARK: - Navigation
 
 
