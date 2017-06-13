@@ -24,8 +24,8 @@ class DetailViewController: UIViewController {
 
         shareButton.layer.cornerRadius =   4.0
         deleteButton.layer.cornerRadius =   4.0
-        deleteButton.layer.borderColor = UIColor(red: 1.0, green: 65.0/255.0, blue: 112.0/255.0 , alpha: 1.0).cgColor
-        deleteButton.layer.borderWidth = 1.0
+//        deleteButton.layer.backgroundColor = UIColor(red: 1.0, green: 65.0/255.0, blue: 112.0/255.0 , alpha: 1.0).cgColor
+        deleteButton.backgroundColor = shareButton.backgroundColor
     }
 
     override func didReceiveMemoryWarning() {
@@ -39,8 +39,16 @@ class DetailViewController: UIViewController {
     }
 
     @IBAction func deleteButtonPressed(_ sender: Any) {
-        delegate?.deleteGif(gif: gif)
-        dismiss(animated: true, completion: nil)
+        let controller = UIAlertController(title: "Alert", message: " Are you sure you want to delete this gif?", preferredStyle: .alert)
+        let deleteAction = UIAlertAction(title: "DELETE", style: .destructive) { action in
+            self.delegate?.deleteGif(gif: self.gif)
+            self.dismiss(animated: true, completion: nil)
+        }
+        let cancelAction = UIAlertAction(title: "CANCEL", style: .cancel, handler: { action in
+            self.dismiss(animated: true, completion: nil)})
+        controller.addAction(deleteAction)
+        controller.addAction(cancelAction)
+        self.present(controller, animated: true, completion: nil)
 
     }
     @IBAction func shareButtonPressed(_ sender: Any) {
