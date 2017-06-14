@@ -433,10 +433,10 @@
                                         <rect key="frame" x="12" y="21" width="319" height="75"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Welcome to GIFit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBs-4n-SXa">
-                                                <rect key="frame" x="79.5" y="0.0" width="160" height="24"/>
+                                                <rect key="frame" x="69.5" y="0.0" width="180" height="24"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="24" id="Tk7-ap-YRS"/>
-                                                    <constraint firstAttribute="width" constant="160" id="XQh-H5-pJs"/>
+                                                    <constraint firstAttribute="width" constant="180" id="XQh-H5-pJs"/>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="20"/>
                                                 <color key="textColor" red="0.18039215689999999" green="0.23921568630000001" blue="0.28627450980000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -458,7 +458,9 @@
                                                 <rect key="frame" x="16" y="36" width="287" height="39"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="287" id="JbZ-cP-AcI"/>
-                                                    <constraint firstAttribute="height" constant="39" id="vW8-il-wlU"/>
+                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="39" id="vW8-il-wlU">
+                                                        <variation key="heightClass=regular-widthClass=compact" constant="39"/>
+                                                    </constraint>
                                                 </constraints>
                                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                                 <color key="textColor" red="0.34509803919999998" green="0.3921568627" blue="0.42745098040000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
